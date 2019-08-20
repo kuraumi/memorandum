@@ -13,6 +13,6 @@ function fastLoadYoutube(imageId, ele){
         const reloadMovie = '<iframe width="'+ imgWidth +'" height="' + imgHeight + '" src=' + ele.getAttribute('youtube') + '" frameborder="0"></iframe>';
         ele.innerHTML = reloadMovie;
     } else {
-            
+            ;
     }
 };
