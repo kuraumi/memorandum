@@ -10,7 +10,7 @@ function fastLoadYoutube(imageId, ele){
     const imgHeight = thumbnail.height;
     
     if(window.matchMedia("(max-width: 768px)").matches){
-        const reloadMovie = '<iframe width="'+ imgWidth +'" height="' + imgHeight + '" src=' + ele.getAttribute('youtube') + '" frameborder="0"></iframe>';
+        const reloadMovie = '<iframe width="'+ imgWidth +'" height="' + imgHeight + '" src=' + ele.getAttribute('data-youtube') + '" frameborder="0"></iframe>';
         ele.innerHTML = reloadMovie;
     } else {
         // 処理なし
