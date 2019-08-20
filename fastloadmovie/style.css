@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .only-pc { display: block; }
 .only-sp { display: none; }
 @media only screen and (max-width: 780px) {
