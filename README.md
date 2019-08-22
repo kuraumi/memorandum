@@ -1,3 +1,3 @@
 # memorandum
 
-[fastloadmovie](/fastloadmovie/)
+[fastloadmovie](/fastloadmovie/index.html/)
