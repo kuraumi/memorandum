@@ -38,7 +38,7 @@ URLをJavaScriptで読み込む際に必要な`data-youtube`属性を付与。
         // 処理なし
     }
 ```
-
+window.matchMediaで横幅判定。
 HTML5で読み込んでいた`data-youtube`をgetAttributeで値を返しURLを読み込む。  
 `imgWidth`、`imgHeight`も使用してiframeを生成し、innerHTMLを実行させる。
 
