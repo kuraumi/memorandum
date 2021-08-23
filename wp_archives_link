@@ -1,0 +1,42 @@
+<!-- 月別アーカイブ -->
+<?php
+  $year = date('Y');
+  $monthnum = get_query_var('monthnum');
+  $post_type = 'post_type';
+  $args = array(
+    'post_type'      => $post_type, 
+    'posts_per_page' => -1,
+    'date_query' => array(
+      array(
+        'year'  => $year,
+      ),
+    ),
+  );
+  $archive_query = new WP_Query( $args );
+  while ( $archive_query->have_posts() ) {
+    $archive_query->the_post();
+    $archive_list[ get_the_time( 'Y/n', $post->ID ) ][] = $post->post_title;
+  }
+  wp_reset_postdata();
+?>
+<?php if( $archive_list ) : ?>
+  <?php foreach( $archive_list as $year_month => $archive ) :
+    $year_month_arr = explode( '/', $year_month );
+  ?>
+  <li>
+    <a href="<?php echo esc_url( home_url( 'date/'.$year_month.'/?post_type='.$post_type ) ) ?>">
+      <?php echo $year_month_arr[0].'年'.$year_month_arr[1].'月' ?> （<?php echo count( $archive ) ?>）</a>
+  </li>
+  <?php endforeach; ?>
+<?php endif; ?>
+
+<!-- 年別アーカイブ -->
+<?php
+$args_yearly = array(
+  'format' => 'html',
+  'type' => 'yearly',
+  'post_type' => 'staff-blog',
+  'show_post_count' => '1',
+);
+wp_get_archives( $args_yearly );
+?>
